@@ -1,9 +1,22 @@
-# React + Vite
+# Shoe Shop Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the Shoe Shop Project! This project is a web application for a shoe store built using HTML, CSS, and JavaScript with React.
 
-Currently, two official plugins are available:
+## Features
+- Home Page: Displays a list of available shoes with only images and names.
+- Shoes Page: Displays a list of available shoes with images, names, prices, and descriptions.
+- Shoe Page: Shows detailed information about a selected shoe, with buttons to edit or delete the shoe.
+- Add Shoe: Allows the user to add a new shoe to the inventory.
+- Edit Shoe: Enables the user to edit the details of an existing shoe.
+- Delete Shoe: Allows the user to delete a shoe from the inventory.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# shoes-app
+# Languages Used
+- HTML
+- CSS
+- JavaScript
+
+
+## Created by
+Rwaa Assi
+
+
