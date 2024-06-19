@@ -10,7 +10,7 @@ Welcome to the Shoe Shop Project! This project is a web application for a shoe s
 - Edit Shoe: Enables the user to edit the details of an existing shoe.
 - Delete Shoe: Allows the user to delete a shoe from the inventory.
 
-# Languages Used
+## Languages Used
 - HTML
 - CSS
 - JavaScript
