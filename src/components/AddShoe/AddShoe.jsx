@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { editShoe } from "../../api/GetShoesData";
+import { addShoe } from "../../api/GetShoesData";
 
-const EditShoe = ({ shoe, onUpdate, onCancel }) => {
+const AddShoe = ({ onAdd, onCancel }) => {
   const [formData, setFormData] = useState({
-    name: shoe.name,
-    price: shoe.price,
-    image: shoe.image,
-    desc: shoe.desc,
+    name: "",
+    price: "",
+    image: "",
+    desc: "",
   });
 
   const handleInputChange = (e) => {
@@ -17,20 +17,20 @@ const EditShoe = ({ shoe, onUpdate, onCancel }) => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    editShoe(shoe.id, formData)
-      .then((updatedShoe) => {
-        onUpdate(updatedShoe);
-      })
-      .catch((error) => {
-        console.error("Failed to update shoe:", error);
-      });
+    try {
+      const newShoe = await addShoe(formData);
+      onAdd(newShoe);
+      setFormData({ name: "", price: "", image: "", desc: "" });
+    } catch (error) {
+      console.error("Failed to add shoe:", error);
+    }
   };
 
   return (
-    <div className="edit-shoe-form">
-      <h2>Edit Shoe</h2>
+    <div className="add-shoe-form">
+      <h2>Add New Shoe</h2>
       <form onSubmit={handleSubmit}>
         <div>
           <label>
@@ -40,6 +40,7 @@ const EditShoe = ({ shoe, onUpdate, onCancel }) => {
               name="name"
               value={formData.name}
               onChange={handleInputChange}
+              required
             />
           </label>
         </div>
@@ -51,6 +52,7 @@ const EditShoe = ({ shoe, onUpdate, onCancel }) => {
               name="price"
               value={formData.price}
               onChange={handleInputChange}
+              required
             />
           </label>
         </div>
@@ -62,6 +64,7 @@ const EditShoe = ({ shoe, onUpdate, onCancel }) => {
               name="image"
               value={formData.image}
               onChange={handleInputChange}
+              required
             />
           </label>
         </div>
@@ -72,10 +75,11 @@ const EditShoe = ({ shoe, onUpdate, onCancel }) => {
               name="desc"
               value={formData.desc}
               onChange={handleInputChange}
+              required
             />
           </label>
         </div>
-        <button type="submit">Update Shoe</button>
+        <button type="submit">Add Shoe</button>
         <button type="button" onClick={onCancel}>
           Cancel
         </button>
@@ -84,4 +88,4 @@ const EditShoe = ({ shoe, onUpdate, onCancel }) => {
   );
 };
 
-export default EditShoe;
+export default AddShoe;
