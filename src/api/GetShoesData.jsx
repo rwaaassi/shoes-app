@@ -27,7 +27,7 @@ export const GetShoesData = () => {
 // add new shoe
 export const addShoe = async (newShoeData) => {
   try {
-    const response = await axios.post(API_URL, newShoeData);
+    const response = await axios.post(`${API_URL}/shoes`, newShoeData);
     return response.data;
   } catch (error) {
     console.error("Error adding shoe:", error);
@@ -55,3 +55,7 @@ export const deleteShoe = async (shoeId) => {
     console.log("Error deleting shoe: ", error);
   }
 };
+// get shoe based on id
+export const getAShoe = async (id) => {
+    const response = await axios.get(`${API_URL}/${shoeId}`)
+}

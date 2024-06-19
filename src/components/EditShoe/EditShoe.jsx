@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { editShoe } from "../../api/GetShoesData";
+import "./EditShoe.css"
 
 const EditShoe = ({ shoe, onUpdate, onCancel }) => {
   const [formData, setFormData] = useState({
@@ -31,7 +32,7 @@ const EditShoe = ({ shoe, onUpdate, onCancel }) => {
   return (
     <div className="edit-shoe-form">
       <h2>Edit Shoe</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="edit-form">
         <div>
           <label>
             Name:
@@ -56,8 +57,8 @@ const EditShoe = ({ shoe, onUpdate, onCancel }) => {
         </div>
         <div>
           <label>
-            Image URL:
-            <input
+            Image URL:  
+             <input
               type="text"
               name="image"
               value={formData.image}
@@ -67,7 +68,7 @@ const EditShoe = ({ shoe, onUpdate, onCancel }) => {
         </div>
         <div>
           <label>
-            Description:
+            Description: 
             <textarea
               name="desc"
               value={formData.desc}
@@ -75,10 +76,12 @@ const EditShoe = ({ shoe, onUpdate, onCancel }) => {
             />
           </label>
         </div>
-        <button type="submit">Update Shoe</button>
-        <button type="button" onClick={onCancel}>
-          Cancel
-        </button>
+        <div className="edit-btns">
+          <button type="submit">Update Shoe</button>
+          <button type="button" onClick={onCancel}>
+            Cancel
+          </button>
+        </div>
       </form>
     </div>
   );

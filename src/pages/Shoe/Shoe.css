@@ -1,0 +1,33 @@
+.shoe-container {
+  padding: 20px;
+  width: 85vw;
+  display: flex;
+  gap: 30px;
+  justify-content: space-around;
+}
+.shoe-image {
+  width: 20vw;
+  height: 60vh;
+}
+.shoe-desc {
+  font-size: 23px;
+}
+.btns {
+  display: flex;
+  gap: 30px;
+}
+.shoe-container button {
+  width: 6vw;
+  height: 5vh;
+  font-size: 20px;
+  border-radius: 15px;
+  background-color: rgb(147, 136, 136);
+  color: white;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: transform 0.3s ease;
+}
+.shoe-container button:hover {
+  background-color: rgb(64, 62, 62);
+  transform: scale(1.05);
+}

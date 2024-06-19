@@ -1,0 +1,28 @@
+.shoe-price{
+    font-size: 22px;
+    font-weight: 600;
+}
+.shoe-description {
+    font-size: 20px;
+    line-height: 40px;
+
+}
+.add-shoe {
+    width: 15vw;
+    height: 5vh;
+    background-color:  rgb(147, 136, 136);
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: auto auto;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 15px;
+    cursor: pointer;
+    color: white;
+    border: 1px solid transparent;
+}
+.add-shoe:hover {
+    background-color: rgb(74, 71, 71);
+}

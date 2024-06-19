@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { addShoe } from "../../api/GetShoesData";
+import "./AddShoe.css"
 
 const AddShoe = ({ onAdd, onCancel }) => {
   const [formData, setFormData] = useState({
@@ -31,7 +32,7 @@ const AddShoe = ({ onAdd, onCancel }) => {
   return (
     <div className="add-shoe-form">
       <h2>Add New Shoe</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="add-form">
         <div>
           <label>
             Name:
@@ -65,6 +66,7 @@ const AddShoe = ({ onAdd, onCancel }) => {
               value={formData.image}
               onChange={handleInputChange}
               required
+              className="shoe-item"
             />
           </label>
         </div>
@@ -79,10 +81,13 @@ const AddShoe = ({ onAdd, onCancel }) => {
             />
           </label>
         </div>
+        <div className="add-btns">
+
         <button type="submit">Add Shoe</button>
         <button type="button" onClick={onCancel}>
           Cancel
         </button>
+        </div>
       </form>
     </div>
   );

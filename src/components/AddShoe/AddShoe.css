@@ -1,0 +1,54 @@
+.add-shoe-form {
+  width: 25vw;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background-color: rgb(214, 208, 208);
+  border-radius: 15px;
+}
+.add-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 22px;
+}
+.add-form input {
+  height: 35px;
+  font-size: 20px;
+  border-radius: 5px;
+  border: 1px solid black;
+  width: 13vw;
+  margin-left: 10px;
+}
+
+.add-form textarea {
+  width: 19vw;
+  height: 200px;
+  resize: none;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+}
+.add-btns {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+.add-btns button {
+  width: 6vw;
+  height: 5vh;
+  font-size: 20px;
+  border-radius: 15px;
+  background-color: rgb(147, 136, 136);
+  color: white;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: transform 0.3s ease;
+}
+.add-btns button:hover {
+  background-color: rgb(64, 62, 62);
+  transform: scale(1.05);
+}

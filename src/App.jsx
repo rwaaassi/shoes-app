@@ -3,6 +3,7 @@ import Home from "./pages/Home/Home"
 import Shoes from "./pages/Shoes/Shoes"
 import Shoe from "./pages/Shoe/Shoe"
 import Navbar from "./components/Navbar/Navbar"
+import "./App.css"
 
 
 const routes = [

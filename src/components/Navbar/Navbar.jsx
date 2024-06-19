@@ -5,6 +5,7 @@ function Navbar() {
   return (
     <div>
       <nav className="navbar">
+        <h1>Shoes Shop</h1>
         <ul>
           <li>
             <NavLink to="/">Home</NavLink>

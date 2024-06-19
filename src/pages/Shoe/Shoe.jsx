@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { GetShoesData, deleteShoe, editShoe } from "../../api/GetShoesData";
 import EditShoe from "../../components/EditShoe/EditShoe";
+import "./Shoe.css";
 
 const Shoe = () => {
   const { shoeId } = useParams();
@@ -11,7 +12,7 @@ const Shoe = () => {
   const [editMode, setEditMode] = useState(false);
 
   useEffect(() => {
-    if (!loading) {
+    if (!loading && shoesData) {
       const shoeToEdit = shoesData.find((shoe) => shoe.id === Number(shoeId));
       setShoe(shoeToEdit);
     }
@@ -44,16 +45,16 @@ const Shoe = () => {
   }
 
   return (
-    <div key={shoe.id} className="shoe-item">
+    <div key={shoe.id} className="shoe-container">
       <img src={shoe.image} alt={shoe.name} className="shoe-image" />
-      <h1>{shoe.name}</h1>
       <div className="shoe-details">
-        <p>$ {shoe.price}</p>
-        <p className="shoe-description">{shoe.desc}</p>
-      </div>
-      <div>
-        <button onClick={() => setEditMode(true)}>Edit Shoe</button>
-        <button onClick={handleDelete}>Delete Shoe</button>
+        <h1>{shoe.name}</h1>
+        <p className="shoe-price">$ {shoe.price}</p>
+        <p className="shoe-desc">{shoe.desc}</p>
+        <div className="btns">
+          <button onClick={() => setEditMode(true)}>Edit Shoe</button>
+          <button onClick={handleDelete}>Delete Shoe</button>
+        </div>
       </div>
       {editMode && (
         <EditShoe

@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { GetShoesData, addShoe as apiAddShoe } from "../../api/GetShoesData";
+import { GetShoesData, addShoe } from "../../api/GetShoesData";
 import AddShoe from "../../components/AddShoe/AddShoe";
+import "./Shoes.css"
 
 const Shoes = () => {
   const { shoesData, loading } = GetShoesData();
@@ -31,27 +32,30 @@ const Shoes = () => {
   }
 
   return (
-    <section className="shoes-container">
-      {allShoes.map((shoe) => (
-        <div
-          key={shoe.id}
-          className="shoe-item"
-          onClick={() => handleShoeClicked(shoe)}
-        >
-          <img src={shoe.image} alt={shoe.name} className="shoe-image" />
-          <h1>{shoe.name}</h1>
-          <div className="shoe-details">
-            <p>$ {shoe.price}</p>
+    <>
+      <section className="shoes-container">
+        {allShoes.map((shoe) => (
+          <div
+            key={shoe.id}
+            className="shoe-item"
+            onClick={() => handleShoeClicked(shoe)}
+          >
+            <img src={shoe.image} alt={shoe.name} className="shoe-image" />
+            <h1>{shoe.name}</h1>
+            <p className="shoe-price">$ {shoe.price}</p>
             <p className="shoe-description">{shoe.desc}</p>
           </div>
-        </div>
-      ))}
-      {addMode ? (
-        <AddShoe onAdd={handleAddShoe} onCancel={() => setAddMode(false)} />
-      ) : (
-        <button onClick={() => setAddMode(true)}>Add Shoe</button>
-      )}
-    </section>
+        ))}
+      </section>
+        {addMode ? (
+          <AddShoe onAdd={handleAddShoe} onCancel={() => setAddMode(false)} />
+        ) : (
+          <button className="add-shoe" onClick={() => setAddMode(true)}>
+            Add Shoe
+          </button>
+        )}
+
+    </>
   );
 };
 
