@@ -1,11 +1,11 @@
 import { Outlet, NavLink } from "react-router-dom";
-import "./Navbar.css"
+import "./Navbar.css";
 
 function Navbar() {
   return (
     <div>
       <nav className="navbar">
-        <ul >
+        <ul>
           <li>
             <NavLink to="/">Home</NavLink>
           </li>
